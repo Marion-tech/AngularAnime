@@ -1,0 +1,46 @@
+.tab-anime{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    margin-top: 80px;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(48, 139, 178);
+    padding:10px;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+}
+.title{
+   flex:2;
+}
+.menu {
+    flex: 3;
+}
+.header-search{
+    flex: 2;
+}
+.menu ul{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.menu li{
+    flex:1;
+    gap:100px;
+    list-style: none;
+}
+
+.clickable {
+    user-select: none;
+    cursor: pointer;
+
+    &:hover {opacity: 0.6;}
+}

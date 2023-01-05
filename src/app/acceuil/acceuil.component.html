@@ -1,0 +1,27 @@
+<header>
+    <div class="title">Anime Angular</div>
+    <nav class="menu">
+       <ul>
+            <li class="clickable">Top 100</li>
+            <li class="clickable">Seasonal</li>
+            <li class="clickable">Most watched</li>
+       </ul>
+    </nav>
+    <form class="header-search" [formGroup]="formGroup">
+        <input placeholder="Anime" formControlName="search">
+
+        <select formControlName="searchGenre">
+            <option selected>Genre</option>
+            <option
+                *ngFor="let genre of dataGenres$ | async"
+                [value]="genre.id"
+            >
+            <div>{{ genre.attributes.name }}</div>
+            </option>
+        </select>
+    </form>
+</header>
+
+<div class="tab-anime">
+    <app-anime *ngFor="let data of dataSource$ | async" [anime]="data"></app-anime>
+</div>

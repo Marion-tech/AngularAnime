@@ -1,0 +1,13 @@
+# path/to/project/root/.eslintignore
+# /node_modules/* and /bower_components/* in the project root are ignored by default
+
+# Ignore built files except build/index.js
+karma.conf.js
+*.spec.ts
+*.spec.js
+src/environments/*
+src/test.ts
+*.stories.ts
+.eslintrc.js
+src/polyfills.ts
+tsconfig.json
