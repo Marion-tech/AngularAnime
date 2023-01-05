@@ -1,0 +1,37 @@
+<!-- <img [src]="anime.attributes.posterImage.tiny">
+<div>{{ anime.attributes.canonicalTitle }}</div>
+<div>{{anime.attributes.episodeCount}}</div>
+<div>{{anime.attributes.titles.ja_jp}}</div>
+<div>Abbreviation : {{anime.attributes.abbreviatedTitles.length}}</div>
+<div>{{anime.attributes.abbreviatedTitles.join(', ')}}</div>
+<div *ngFor="let genre of (anime.genres$ | async)">
+    Genre : {{genre.attributes.name}}
+</div> -->
+<div class="flex-container">
+
+    <div class="card-image clickable"><img height="100%" [src]="anime.attributes.posterImage.large"></div>
+    <div class="flex-container-column">
+        <div class="flex-container-header clickable">
+            <div class="card-title">{{ anime.attributes.canonicalTitle }}</div>
+            <div class="card-ep">{{anime.attributes.episodeCount}} episode</div>
+        </div>
+    
+        <div class="card-subtitle">{{anime.attributes.titles.ja_jp}}</div>
+
+        <div class="card-synopsis">
+            {{ anime.attributes.synopsis }}
+        </div>
+        
+        <div class="flex-footer">
+            <ng-container  *ngFor="let genre of (anime.genres$ | async)"> 
+                <div class="card-genre clickable">{{genre.attributes.name}} </div>
+            </ng-container> 
+            <div class="card-status">
+                <ng-container [ngSwitch]="anime.attributes.status">
+                <ng-container *ngSwitchCase="'finished'"><img src="http://cdn.onlinewebfonts.com/svg/img_180165.png" alt=""></ng-container>
+                <ng-container *ngSwitchDefault>X</ng-container>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
